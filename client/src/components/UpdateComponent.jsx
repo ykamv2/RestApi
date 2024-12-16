@@ -26,7 +26,8 @@ const UpdateComponent = () => {
 
         if (formData.id) {
             e.preventDefault();
-            const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+            // const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+            const URL = 'http://localhost:5000/users';
             var res = await axios.patch(`${URL}/${formData.id}`, formData);
             // console.log(res);
             setShowDisplayMsg(true);

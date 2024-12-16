@@ -8,7 +8,8 @@ const DisplayUsers = () => {
     const [showDisplayTable, setShowDisplayTable] = useState(false);
     const [showDisplayMsg, setShowDisplayMsg] = useState(false);
     const getUser = async () => {
-        const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+        // const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+        const URL = 'http://localhost:5000/users';
         var res = await axios.get(`${URL}`)
         var data = res.data;
         // console.log(data);
@@ -35,6 +36,7 @@ const DisplayUsers = () => {
                     <Toast.Body>A GET request is made to the server fetching all the data you entered. <b>Copy the ID value to use in the further steps.</b></Toast.Body>
                 </Toast>
             </div>
+            <div className="container">
             <h3 className='mt-3 display-5'>Click on the button to show all the added Users</h3>
             <Button variant="secondary" type="button" onClick={getUser} className='mt-2'>
                 Show Users
@@ -67,6 +69,7 @@ const DisplayUsers = () => {
             {showDisplayMsg && (
                 <p className='mt-3' id='red'>Uh-Ooh! No user data to show! Click on Create in navbar to add user.</p>
             )}
+            </div>
         </>
     )
 }

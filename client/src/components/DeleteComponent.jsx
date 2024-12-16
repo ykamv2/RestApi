@@ -13,7 +13,8 @@ const DeleteComponent = () => {
     const handleDelete = async (e) => {
         
         // console.log(searchData);
-        const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+        // const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+        const URL = 'http://localhost:5000/users';
         var id = deleteData;
         let res = await axios.delete(`${URL}/${id}`,{params: {"id":id}})
         console.log(res);

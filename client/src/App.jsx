@@ -81,7 +81,8 @@ const App = () => {
   const search = async (e) => {
     e.preventDefault();
     // console.log(searchData);
-    const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+    // const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+    const URL = 'http://localhost:5000/users';
     var id = searchData;
     let res = await axios.get(`${URL}/${id}`)
     var data = res.data;
@@ -105,11 +106,11 @@ const App = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
+              <Nav.Link onClick={showAbout}>About</Nav.Link>
               <Nav.Link onClick={showAdd}>Create</Nav.Link>
               <Nav.Link onClick={showDisplay}>Read</Nav.Link>
               <Nav.Link onClick={showUpdate}>Update</Nav.Link>
-              <Nav.Link onClick={showDelete}>Delete</Nav.Link>
-              <Nav.Link onClick={showAbout}>About</Nav.Link>
+              <Nav.Link onClick={showDelete}>Delete</Nav.Link> 
             </Nav>
             <Form className='d-flex' onSubmit={search}>
               <FormControl

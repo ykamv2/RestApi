@@ -25,7 +25,8 @@ const AddForm = () => {
         // console.log(formData);
         e.preventDefault();
         const { firstName, lastName, age, rollno } = formData;
-        const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+        // const URL = 'https://basic-restapi-yk.herokuapp.com/users';
+        const URL = 'http://localhost:5000/users';
         var res = await axios.post(`${URL}`, { firstName, lastName, age, rollno })
         // console.log(res);
         setShowDisplayMsg(true);
@@ -50,6 +51,7 @@ const AddForm = () => {
             </div>
 
             <p className='display-5 mt-3'>Enter User Data:</p>
+            <div className="container">
             <Form id='form' className='mt-3'>
                 <Form.Group className="mb-3" controlId="firstName">
                     <Form.Label>First Name</Form.Label>
@@ -79,6 +81,7 @@ const AddForm = () => {
             {showDisplayMsg && (
                 <p className='mt-3' id='green'>User successfully added! Click on Read to view details of all the users!</p>
             )}
+            </div>
         </>
     )
 }
